@@ -90,8 +90,7 @@ module.exports = function(strUrl, strWindowName, strWindowFeatures) {
        iab._eventHandler(eventname);
     };
 
-    // force to open all links in system-browser
-    strWindowFeatures = '_system';
+    if(strWindowName != '_blank') { strWindowName = '_system'; }
 
     exec(cb, cb, "InAppBrowser", "open", [strUrl, strWindowName, strWindowFeatures]);
     return iab;
