@@ -84,9 +84,9 @@ module.exports = function(strUrl, strWindowName, strWindowFeatures) {
        iab._eventHandler(eventname);
     };
 
-    if(strWindowName != '_blank') { strWindowName = '_system'; }
+    // if(strWindowName != '_blank') { strWindowName = '_system'; }
 
-    exec(cb, cb, "InAppBrowser", "open", [strUrl, strWindowName, strWindowFeatures]);
+    exec(cb, cb, "InAppBrowser", "open", [strUrl, '_blank', strWindowFeatures]);
     return iab;
 };
 
